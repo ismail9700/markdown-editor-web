@@ -1,0 +1,65 @@
+/* Box sizing rules */
+/* Remove default margin */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  list-style: none;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #616161 #ffffff;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+}
+
+/* Remove the link underline */
+a {
+  text-decoration: none;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Make button behave and look like actual buttons */
+button,
+input[type="submit"],
+input[type="button"] {
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+/* Remove italic font from address */
+address {
+  font-style: normal;
+}

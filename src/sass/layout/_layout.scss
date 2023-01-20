@@ -1,0 +1,366 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+body {
+  overflow: hidden;
+}
+
+textarea {
+  cursor: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: $header;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-right: 5em;
+
+  div {
+    display: flex;
+  }
+
+  >div {
+    gap: .5em;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    padding: .5em;
+  }
+
+  .long-nav {
+    &::after {
+      content: "";
+      width: 25%;
+      height: 51px;
+      right: 0;
+      top: 0;
+      background-image: map-get($gradiant, "header-btns");
+      position: absolute;
+    }
+
+    .add-btn {
+      position: absolute;
+      right: 55px;
+      top: 16px;
+      color: white;
+      border-radius: 5px;
+      z-index: 1;
+      opacity: 1;
+    }
+  }
+
+  .save-btn {
+    position: absolute;
+    background-color: $save-btn;
+    border-radius: 4px;
+    padding: .5em;
+    margin: .5em;
+    right: 5px;
+    top: -1px;
+    z-index: 1;
+    @include transition-ease(background-color);
+
+    &:hover,
+    &:focus {
+      background-color: #ffb6a3;
+    }
+  }
+
+  .add-btn {
+    padding: .1em;
+    margin-left: 1em;
+    opacity: .3;
+    @include transition-ease(opacity);
+
+    &:hover,
+    &:focus {
+      opacity: .8;
+    }
+  }
+
+  ul li:last-child {
+    align-self: center;
+  }
+
+  .active {
+    position: relative;
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      height: 125%;
+      translate: -10px -15px;
+      border-radius: 0 0 10px 10px;
+      width: 115%;
+      background-color: $bars;
+      position: absolute;
+    }
+
+    // overwriting
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+
+  .menu-btn {
+    padding: 1em;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &::after {
+      content: "markitdown";
+      opacity: .8;
+      display: none;
+      border-right: 1px solid rgba(0, 0, 0, 0.4);
+      padding: 0 1em
+    }
+
+    i {
+      @include transition-ease(rotate);
+    }
+
+    &:hover>i,
+    &:focus>i {
+      rotate: 90deg;
+    }
+  }
+
+  .menu-btn-mode {
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0;
+    background-image: map-get($gradiant, "menu-btn");
+  }
+
+  &::-webkit-scrollbar {
+    height: 5px;
+  }
+
+  // &::-webkit-scrollbar-thumb {
+  //   background-color: $scroll-bar-bg;
+  //   border-radius: 10px;
+  //   border: 0px solid $header;
+  // }
+
+  // &::-webkit-scrollbar-track {
+  //   background-color: $header;
+  // }
+
+  .files-container {
+    height: 140%;
+  }
+
+  .document-container>i {
+    z-index: 1;
+    align-self: center;
+  }
+}
+
+.files-container {
+  display: flex;
+  gap: .5em;
+}
+
+.document-container {
+  display: flex;
+  gap: .8em;
+  margin-left: 1em;
+  cursor: pointer;
+  @include transition-ease(opacity);
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: .5;
+  }
+
+  .remove-btn {
+    opacity: .8;
+    z-index: 1;
+    align-self: center;
+    @include transition-ease(opacity);
+
+    &:hover,
+    &:focus {
+      opacity: .3;
+    }
+  }
+
+  #file-name {
+    outline: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 70px;
+    min-width: 60px;
+  }
+
+  .doc-info {
+    z-index: 1;
+    align-self: center;
+
+    >span {
+      display: none;
+      opacity: .8;
+    }
+  }
+}
+
+.markdown,
+.preview {
+  header {
+    background-color: $bars;
+    padding: .5em 1em;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.preview {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: white;
+  min-height: 100vh;
+}
+
+.preview-btn {
+  @include transition-ease(opacity);
+
+  &:hover,
+  &:focus {
+    opacity: .5;
+  }
+}
+
+main {
+  position: relative;
+}
+
+.menu {
+  height: 100vh;
+  position: absolute;
+  background-color: white;
+  @include transition-ease(left);
+  left: -100vw;
+  min-width: 200px;
+  z-index: 2;
+
+  >div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+      padding: 1em;
+
+      #saved-num {
+        margin-left: .2em;
+        opacity: .6;
+      }
+    }
+
+    i {
+      padding-right: 1em;
+    }
+
+    .theme-btn {
+      @include transition-ease(opacity);
+
+      &:hover,
+      &:focus {
+        opacity: .5;
+      }
+    }
+  }
+
+  .document-container {
+    padding: .5em 1em;
+    justify-content: space-between;
+
+    .menu-file-btns {
+      display: flex;
+      gap: 1em;
+
+      .download-btn {
+        @include transition-ease(opacity);
+
+        &:hover,
+        &:focus {
+          opacity: .5;
+        }
+      }
+    }
+
+    .document {
+      display: flex;
+
+      #file-name {
+        max-width: auto;
+        min-width: auto;
+        padding-left: .5em;
+      }
+    }
+  }
+
+  .files-container {
+    flex-direction: column-reverse;
+  }
+}
+
+#text {
+  width: 100%;
+  max-height: 100%;
+  resize: none;
+  border: 0;
+  outline: none;
+  padding: 1em 2em;
+  overflow: hidden;
+}
+
+#preview {
+  padding: 1em 2em;
+  word-break: break-all;
+  overflow-x: hidden;
+}
+
+#text,
+#preview,
+.header {
+  &::-webkit-scrollbar-thumb {
+    background-color: $scroll-bar-bg;
+    border-radius: 10px;
+    border: 0px solid $header;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $header;
+  }
+}
+
+#text,
+#preview {
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+}
+
+.show {
+  left: 0;
+}
+
+.hide {
+  display: none;
+}

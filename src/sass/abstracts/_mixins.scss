@@ -1,0 +1,9 @@
+@mixin transition-ease($target) {
+  transition: $target 350ms ease;
+}
+
+@mixin media-lg {
+  @media (min-width: 600px) {
+    @content;
+  }
+}

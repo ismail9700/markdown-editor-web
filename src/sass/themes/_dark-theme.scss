@@ -1,0 +1,115 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+$save-btn: #7F1900;
+$header: #2B2F31;
+$bars: #202324;
+$scroll-bar-bg: #868686;
+$main-bg: #181A1B;
+$gradiant: (
+  "menu-btn": linear-gradient(to right, $header 90%, transparent),
+  "header-btns": linear-gradient(to right, transparent, rgb(0, 0, 0)),
+);
+
+.dark-theme {
+
+  &,
+  #text {
+    background-color: #181A1B;
+  }
+
+  .files-container,
+  .remove-btn,
+  .preview-btn,
+  .save-btn,
+  .markdown header,
+  .preview header,
+  #text,
+  #preview,
+  .menu,
+  .menu i,
+  .add-btn,
+  .logo {
+    color: white;
+  }
+
+  .header {
+    background-color: $header;
+
+    .long-nav {
+      &::after {
+        background-image: map-get($gradiant, "header-btns");
+      }
+    }
+
+    .save-btn {
+      background-color: $save-btn;
+
+      &:hover,
+      &:focus {
+        background-color: #a72100;
+      }
+    }
+
+    .active::after {
+      background-color: #1A1C1D;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $scroll-bar-bg;
+      border: 0px solid $header;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: $header;
+    }
+
+    .add-btn {
+      opacity: .8;
+
+      &:hover,
+      &:focus {
+        opacity: .4;
+      }
+    }
+
+    .menu-btn {
+      color: rgb(223, 223, 223);
+    }
+
+    .menu-btn-mode {
+      background-image: map-get($gradiant, "menu-btn");
+    }
+  }
+
+
+  .markdown,
+  .preview {
+    header {
+      background-color: $bars;
+    }
+  }
+
+  .preview {
+    background-color: $main-bg;
+  }
+
+  .menu {
+    background-color: $main-bg;
+  }
+
+}
+
+@include media-lg {
+  .dark-theme {
+    .header {
+      .menu-btn-mode {
+        background: $header;
+      }
+
+      .menu-btn::after {
+        border-right: 1px solid rgba(255, 255, 255, 0.6);
+      }
+    }
+  }
+}

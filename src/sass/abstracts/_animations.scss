@@ -1,0 +1,31 @@
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.active::after {
+  -webkit-animation: fade 1s;
+  animation: fade 1s;
+}
+
+.markdown,
+.preview,
+.document-container {
+  -webkit-animation: fade 500ms;
+  animation: fade 500ms;
+}

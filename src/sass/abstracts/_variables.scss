@@ -1,0 +1,14 @@
+$save-btn: #ff9980;
+
+$header: #dddddd;
+
+$bars: #f1f1f1;
+
+$scroll-bar-bg: #b3b3b3;
+
+$font-stack: 'Rubik', sans-serif;
+
+$gradiant: (
+  "menu-btn": linear-gradient(to right, $header 90%, transparent),
+  "header-btns": linear-gradient(to right, transparent, rgb(75, 75, 75)),
+);
