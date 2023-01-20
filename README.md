@@ -18,7 +18,7 @@
 
 ## Links
 
-- [Live Site](hhttps://i-markitdown.netlify.app/)
+- [Live Site](https://i-markitdown.netlify.app/)
 
 ## Built with
 
@@ -28,4 +28,5 @@
 - Javascript ES6+
 - [Markdown-it package](https://www.npmjs.com/package/markdown-it)
 - [File-saver package](https://www.npmjs.com/package/file-saver)
-- [Bundled with parcel](https://parceljs.org/)
+- [Fontawsome](https://fontawesome.com/)
+- [Parcel](https://parceljs.org/)
