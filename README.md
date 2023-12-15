@@ -1,10 +1,8 @@
 # MarkItDown
 
-## Table of contents
+Check out the [react version](https://github.com/Ismail970/MarkItDown-react) of this app.
 
-- [Screenshot](#screenshot)
-- [Links](#links)
-- [Built with](#built-with)
+- [Demo](https://i-markitdown.netlify.app/)
 
 ## Screenshot
 
@@ -15,10 +13,6 @@
 ![](screenshots/screenshot-localhost_5173-2023.01.19-20_37_26.png)
 
 ![](screenshots/screenshot-i-markitdown.netlify.app-2023.01.19-20_51_03.png)
-
-## Links
-
-- [Live Site](https://i-markitdown.netlify.app/)
 
 ## Built with
 
