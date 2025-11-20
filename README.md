@@ -4,7 +4,7 @@ A lightweight markdown editor web application that enables users to write, previ
 Check out the [React version](https://github.com/Ismail970/MarkItDown-react) of this app.
 
 ## Demo
-[**Try MarkItDown Live**](https://i-markitdown.netlify.app/)
+[**Try it Live**](https://i-markitdown.netlify.app/)
 
 ## Screenshots
 ![Screenshot 1](screenshots/screenshot-localhost_5173-2023.01.19-20_36_43.png)
