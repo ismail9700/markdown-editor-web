@@ -1,5 +1,3 @@
-# MarkItDown
-
 ## About
 MarkItDown is a lightweight markdown editor web application that enables users to write, preview, and format markdown content in real-time. Users can save documents locally or store them in the browser.
 
